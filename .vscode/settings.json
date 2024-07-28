@@ -48,5 +48,6 @@
             "comments": true,
             "strings": true
         }
-    }
+    },
+    "cSpell.language": "en,ru,ru-RU"
 }
