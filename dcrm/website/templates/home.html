@@ -5,11 +5,31 @@
 <div class="col-md-6 offset-md-3">
     
     {% if user.is_authenticated %}
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Email</th>
+          <th scope="col">Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if records %}
 
-    <h1>You are logged in!</h1>
-
+        {% for record in records %}
+        <tr>
+            <td>{{ record.first_name }}
+            {{ record.last_name }}</td>
+            <td>{{ record.phone }}</td>
+            <td>{{ record.email }}</td>
+            <td>{{ record.address }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
     {% else %}
-    
     <h1>Login</h1>
     <br/>
     <form method="POST" action="{% url "home" %}">
